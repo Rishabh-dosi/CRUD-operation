@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAMARA DATA BASE</title>
+    <style>
+        table , th , td{
+            
+            border: solid black 1px;
+            border-collapse: collapse;
+
+        }
+        table{
+            width: 100%;
+        }
+        tr {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Practice List</h2>
+    <table>
+        <tr>
+
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Passowrd</th>
+            <th>Delete action</th>
+        </tr>
+        
+
+        <% for(var i=0 ; i < data.length ; i++){ %>
+            <tr>
+                <td><%- data[i].idn %></td>
+                <td><%- data[i].name %></td>
+                <td><%- data[i].email %></td>
+                <td><%- data[i].pasword %></td>
+                <td><a href="/delete?idn=<%- data[i].idn %>">Delete</a> <a href="/edit?idn=<%-data[i].idn %> ">Edit</a></td>
+
+            </tr>
+            <%} %>
+    </table>
+    
+
+</body>
+
+</html>
